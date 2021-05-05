@@ -1,0 +1,27 @@
+{
+  "name": "js-adventure",
+  "version": "1.0.0",
+  "description": "A game to learn javascript fundamentals",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "cd client && npm start",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JeffKersting/js-adventure.git"
+  },
+  "author": "Jeff Kersting",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JeffKersting/js-adventure/issues"
+  },
+  "homepage": "https://github.com/JeffKersting/js-adventure#readme",
+  "dependencies": {
+    "concurrently": "^6.0.2",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7"
+  }
+}
