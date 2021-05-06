@@ -1,3 +1,5 @@
+import game from '../gameConfig'
+
 class Align
 {
 	static scaleToGameW(obj,per)
@@ -24,3 +26,5 @@ class Align
 		obj.y=game.config.height/2;
 	}
 }
+
+export default Align

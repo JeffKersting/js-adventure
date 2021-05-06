@@ -1,3 +1,5 @@
+import game from '../gameConfig'
+
 class AlignGrid
 {
 	constructor(config)
@@ -86,3 +88,5 @@ class AlignGrid
 		        }
 	}
 }
+
+export default AlignGrid

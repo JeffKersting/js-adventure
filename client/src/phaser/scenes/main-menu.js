@@ -1,5 +1,6 @@
 import Phaser from 'phaser'
 import game from '../gameConfig'
+import { startNewScene, stopCurrentScene } from '../logic/scenes'
 
 class MainMenu extends Phaser.Scene {
   constructor() {

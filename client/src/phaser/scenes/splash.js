@@ -1,3 +1,6 @@
+import game from '../gameConfig'
+import { startNewScene, stopCurrentScene } from '../logic/scenes'
+
 class Splash extends Phaser.Scene {
   constructor() {
     super({key: 'Splash'});

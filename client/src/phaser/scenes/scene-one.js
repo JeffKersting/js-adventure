@@ -1,3 +1,10 @@
+import game from '../gameConfig'
+import { startNewScene, stopCurrentScene } from '../logic/scenes'
+import { createMap, placeBlock } from '../logic/levels'
+import { moveRight, moveLeft, moveUp, moveDown } from '../logic/movement'
+import AlignGrid from '../utilities/alignGrid'
+
+
 class SceneOne extends Phaser.Scene {
   constructor() {
     super({key: 'SceneOne'}),
