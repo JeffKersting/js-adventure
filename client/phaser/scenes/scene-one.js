@@ -86,3 +86,5 @@ class SceneOne extends Phaser.Scene {
     }
   }
 }
+
+export default SceneOne

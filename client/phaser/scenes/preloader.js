@@ -35,3 +35,5 @@ class Preloader extends Phaser.Scene {
     });
   }
 }
+
+export default Preloader
