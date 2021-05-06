@@ -1,5 +1,8 @@
 import Phaser from 'phaser'
-import * from './scenes/index'
+import Preloader from './scenes/preloader'
+import MainMenu from './scenes/main-menu'
+import Splash from './scenes/splash'
+import SceneOne from './scenes/scene-one'
 
 const gameConfig = {
   type: Phaser.AUTO,
@@ -11,7 +14,7 @@ const gameConfig = {
       gravity: { y: 0}
     }
   },
-  scene: [ Preloader, Splash, MainMenu, SceneOne, SceneTwo ]
+  scene: [ Preloader, Splash, MainMenu, SceneOne ]
 }
 
 const game = new Phaser.Game(gameConfig)

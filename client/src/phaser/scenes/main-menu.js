@@ -1,3 +1,6 @@
+import Phaser from 'phaser'
+import game from '../gameConfig'
+
 class MainMenu extends Phaser.Scene {
   constructor() {
     super({key: 'MainMenu'}),

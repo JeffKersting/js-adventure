@@ -4,12 +4,10 @@ class Preloader extends Phaser.Scene {
   }
 
   preload() {
-    this.load.spritesheet('characters', 'assets/characters.png', { frameWidth: 32, frameHeight: 32 } );
-    this.load.spritesheet('grass', 'assets/grass.png', { frameWidth: 32 , frameHeight: 32 });
-    this.load.spritesheet('disciple', 'assets/disciple.png', { frameWidth: 45 , frameHeight: 51 });
-    this.load.spritesheet('fireball', 'assets/fireball.png', { frameWidth: 13 , frameHeight: 13 })
-    this.load.audio('jump', 'assets/jump.mp3');
-    this.load.image('sky', 'assets/sky.jpg')
+    this.load.spritesheet('characters', '../assets/characters.png', { frameWidth: 32, frameHeight: 32 } );
+    this.load.spritesheet('grass', '../assets/grass.png', { frameWidth: 32 , frameHeight: 32 });
+    this.load.spritesheet('disciple', '../assets/disciple.png', { frameWidth: 45 , frameHeight: 51 });
+    this.load.image('sky', '../assets/sky.jpg')
 
 
     let progressBar = this.progressBar = this.add.graphics();

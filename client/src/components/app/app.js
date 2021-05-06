@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react'
 import Phaser from 'phaser'
 import { IonPhaser } from '@ion-phaser/react'
+import game from '../../phaser/gameConfig'
 
 // class App extends Component {
 //   state = {
@@ -24,23 +25,10 @@ import { IonPhaser } from '@ion-phaser/react'
 
 function App() {
 
-  const [initialize, setInitialize] = useState(null)
-  const [game, setGame] = useState(null)
-
-  useEffect(() => {
-    setInitialize(false)
-    setGame({
-      width: "100%",
-      height: "100%",
-      type: Phaser.AUTO,
-      scene: {}
-    })
-  }, [])
-
   return (
     <>
       <div>Test</div>
-      <IonPhaser game={game} initialize={initialize} />
+      <IonPhaser game={game} initialize={true} />
     </>
   )
 }
