@@ -24,7 +24,7 @@
       "react-app",
       "react-app/jest"
     ],
-    "rules" : {
+    "rules": {
       "no-undef": "off",
       "no-unused-expressions": "off"
     }
