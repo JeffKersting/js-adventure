@@ -11,3 +11,24 @@ export function createMap(fromPosition, toPosition, scene, key, spritesheet) {
     placeBlock(scene, i, key, spritesheet)
   }
 }
+
+export function placeObstacleBlock(scene, position, key, spritesheet, group) {
+  let block = scene.add.sprite(0,0, key, spritesheet);
+  scene.aGrid.placeAtIndex(position, block);
+  Align.scaleToGameW(block, .055);
+}
+
+// export function createObstacle(positions, scene, key, spritesheet, group) {
+//   positions.foreach(position => {
+//     placeBlock(scene, i, key, spritesheet, group)
+//   })
+// }
+
+export function createObstacle(scene, positions, key, spritesheet, group) {
+  positions.forEach(position => {
+    let block = scene.add.sprite(0,0, key, spritesheet);
+    group.add(block)
+    scene.aGrid.placeAtIndex(position, block);
+    Align.scaleToGameW(block, .055);
+  })
+}

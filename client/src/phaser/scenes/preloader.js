@@ -9,6 +9,7 @@ class Preloader extends Phaser.Scene {
     this.load.spritesheet('characters', '../assets/characters.png', { frameWidth: 32, frameHeight: 32 } );
     this.load.spritesheet('grass', '../assets/grass.png', { frameWidth: 32 , frameHeight: 32 });
     this.load.spritesheet('disciple', '../assets/disciple.png', { frameWidth: 45 , frameHeight: 51 });
+    this.load.spritesheet('environment', '../assets/environment.png', { frameWidth: 16, frameHeight: 16});
     this.load.image('sky', '../assets/sky.jpg')
 
 

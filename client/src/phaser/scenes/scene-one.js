@@ -1,6 +1,6 @@
 import game from '../gameConfig'
 import { startNewScene, stopCurrentScene } from '../logic/scenes'
-import { createMap, placeBlock } from '../logic/levels'
+import { createMap, createObstacle } from '../logic/levels'
 import { moveRight, moveLeft, moveUp, moveDown } from '../logic/movement'
 import AlignGrid from '../utilities/alignGrid'
 
@@ -11,13 +11,11 @@ class SceneOne extends Phaser.Scene {
     this.isAsleep = false;
   }
 
-  preload() {
-
-  }
-
   create() {
+    this.river = this.physics.add.group()
     this.aGrid = new AlignGrid({scene: this, cols: 30, rows: 20});
     createMap(0, 599, this, 'grass', 17)
+    createObstacle(this, [22,23,52,53,82,83,112,113,142,143,172,173,202,203], 'environment', 1, this.river)
     this.disciple = this.physics.add.sprite(400, 500, 'disciple', 0);
     this.player = this.physics.add.sprite(100, 551.5, 'characters', 35);
     this.key_A = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
@@ -30,10 +28,16 @@ class SceneOne extends Phaser.Scene {
       startNewScene('SceneTwo');
     });
 
+    console.log(this.river)
+
     this.physics.add.collider(this.player, this.disciple, function(){
       stopCurrentScene('SceneOne');
       startNewScene('SceneTwo');
     })
+
+    // this.physics.add.collider(this.player, this.river, () => {
+    //   console.log('collision')
+    // })
 
     this.anims.create({
       key: 'playerWalk',
