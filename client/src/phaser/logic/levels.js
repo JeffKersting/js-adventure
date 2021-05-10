@@ -18,12 +18,6 @@ export function placeObstacleBlock(scene, position, key, spritesheet, group) {
   Align.scaleToGameW(block, .055);
 }
 
-// export function createObstacle(positions, scene, key, spritesheet, group) {
-//   positions.foreach(position => {
-//     placeBlock(scene, i, key, spritesheet, group)
-//   })
-// }
-
 export function createObstacle(scene, positions, key, spritesheet, group) {
   positions.forEach(position => {
     let block = scene.add.sprite(0,0, key, spritesheet);

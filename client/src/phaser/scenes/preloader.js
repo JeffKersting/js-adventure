@@ -30,7 +30,7 @@ class Preloader extends Phaser.Scene {
     });
 
     this.load.on('complete', function () {
-      game.scene.start('Splash');
+      game.scene.start('SceneOne');
       progressBar.destroy();
       progressBox.destroy();
     });

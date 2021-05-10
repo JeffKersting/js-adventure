@@ -18,6 +18,8 @@ class SceneOne extends Phaser.Scene {
     createObstacle(this, [22,23,52,53,82,83,112,113,142,143,172,173,202,203], 'environment', 1, this.river)
     this.disciple = this.physics.add.sprite(400, 500, 'disciple', 0);
     this.player = this.physics.add.sprite(100, 551.5, 'characters', 35);
+    this.goal = this.physics.add.sprite(900, 100, 'environment', 50);
+    this.goal.scale = 3
     this.key_A = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
     this.key_D = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
     this.key_S = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
@@ -35,9 +37,14 @@ class SceneOne extends Phaser.Scene {
       startNewScene('SceneTwo');
     })
 
-    // this.physics.add.collider(this.player, this.river, () => {
-    //   console.log('collision')
-    // })
+    this.physics.add.collider(this.player, this.river, () => {
+      stopCurrentScene('SceneOne');
+      startNewScene('SceneOne');
+    })
+
+    this.physics.add.collider(this.player, this.goal, () => {
+      console.log('you win')
+    })
 
     this.anims.create({
       key: 'playerWalk',
