@@ -1,1 +1,35 @@
+div {
+  display: flex;
+}
 
+canvas {
+  position: fixed;
+  top: 15vh;
+  left: 2vw;
+  height: 70vh
+}
+
+.game-border {
+  background-color: rgba(0,0,0,.5);
+  position: relative;
+  display: flex;
+  height: 85vh;
+  width: 90vw;
+
+  .game-top {
+    position: absolute;
+    top: .25vh;
+    width: 100%;
+    height: 13vh;
+    background-color: rgba(255,255,255,.75);
+  }
+
+  .game-sidebar {
+    position: absolute;
+    right: .75vw;
+    top: 14vh;
+    height: 70vh;
+    width: 17vw;
+    background-color: rgba(255,255,255,.75);
+  }
+}
