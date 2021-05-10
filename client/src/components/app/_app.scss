@@ -1,1 +1,30 @@
+div {
+  display: flex;
+}
 
+canvas {
+  border: 5px solid black;
+  position: fixed;
+  top: 5vh;
+  left: 2vw;
+  height: 70vh
+}
+
+.game-border {
+  background-color: yellow;
+  position: relative;
+  display: flex;
+  height: 80vh;
+  width: 90vw;
+
+  .game-sidebar {
+
+    position: absolute;
+    right: .25vw;
+    top: 4vh;
+    margin: 5px;
+    height: 70.5vh;
+    width: 17vw;
+    background-color: black;
+  }
+}

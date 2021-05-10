@@ -7,7 +7,10 @@ function App() {
 
   return (
     <>
-      <IonPhaser game={game} initialize={true} />
+      <IonPhaser game={game} initialize={true} className='phaser'/>
+      <article className='game-border'>
+        <div className='game-sidebar'></div>
+      </article>
     </>
   )
 }
