@@ -3,28 +3,33 @@ div {
 }
 
 canvas {
-  border: 5px solid black;
   position: fixed;
-  top: 5vh;
+  top: 15vh;
   left: 2vw;
   height: 70vh
 }
 
 .game-border {
-  background-color: yellow;
+  background-color: rgba(0,0,0,.5);
   position: relative;
   display: flex;
-  height: 80vh;
+  height: 85vh;
   width: 90vw;
 
-  .game-sidebar {
-
+  .game-top {
     position: absolute;
-    right: .25vw;
-    top: 4vh;
-    margin: 5px;
-    height: 70.5vh;
+    top: .25vh;
+    width: 100%;
+    height: 13vh;
+    background-color: rgba(255,255,255,.75);
+  }
+
+  .game-sidebar {
+    position: absolute;
+    right: .75vw;
+    top: 14vh;
+    height: 70vh;
     width: 17vw;
-    background-color: black;
+    background-color: rgba(255,255,255,.75);
   }
 }

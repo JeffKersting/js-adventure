@@ -9,6 +9,7 @@ function App() {
     <>
       <IonPhaser game={game} initialize={true} className='phaser'/>
       <article className='game-border'>
+        <div className='game-top'></div>
         <div className='game-sidebar'></div>
       </article>
     </>
