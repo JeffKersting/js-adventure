@@ -11,7 +11,9 @@ class SceneOne extends Phaser.Scene {
     this.isAsleep = false;
   }
 
+
   create() {
+    game.parent.setLevelData('Scene Two')
     this.river = this.physics.add.group()
     this.aGrid = new AlignGrid({scene: this, cols: 30, rows: 20});
     createMap(0, 599, this, 'grass', 17)
@@ -25,12 +27,7 @@ class SceneOne extends Phaser.Scene {
     this.key_S = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
     this.key_W = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
     this.key_P = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.P);
-    this.input.keyboard.on('keyup_P', function(){
-      stopCurrentScene('SceneOne');
-      startNewScene('SceneTwo');
-    });
 
-    console.log(this.river)
 
     this.physics.add.collider(this.player, this.disciple, function(){
       stopCurrentScene('SceneOne');
