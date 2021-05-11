@@ -9,18 +9,19 @@ class SceneOne extends Phaser.Scene {
   constructor() {
     super({key: 'SceneOne'}),
     this.isAsleep = false;
+    this.solved = false;
   }
 
 
   create() {
-    game.parent.setLevelData('if (x = 2) { return (deadlyWater) }')
+    game.parent.setLevelData('if (x = 1) { return (deadlyWater) }')
     this.river = this.physics.add.group()
     this.aGrid = new AlignGrid({scene: this, cols: 30, rows: 20});
     createMap(0, 599, this, 'grass', 17)
-    createObstacle(this, [22,23,52,53,82,83,112,113,142,143,172,173,202,203], 'environment', 1, this.river)
+    createObstacle(this, [23,53,83,113,143,173,203,204,205,206,207,208,209], 'environment', 1, this.river)
 
-    this.area = this.physics.add.sprite(100,100, 'environment', 8)
-    this.area.scale = 8
+    this.puzzleArea = this.physics.add.sprite(100,100, 'environment', 8)
+    this.puzzleArea.scale = 8
 
     this.text = this.add.text(90,40, 'X', {fill: '#000000'})
     this.text.scale = (2)
@@ -46,9 +47,9 @@ class SceneOne extends Phaser.Scene {
     this.key_P = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.P);
 
     this.physics.add.collider(this.player, this.barrel)
-
-
-    console.log(this.barrel)
+    this.physics.add.collider(this.barrel, this.puzzleArea, () => {
+      this.solved = false
+    })
 
 
     // this.physics.add.collider(this.player, this.disciple, function(){
@@ -99,7 +100,13 @@ class SceneOne extends Phaser.Scene {
 
 
 
+
+
   update() {
+    if(!Phaser.Geom.Intersects.RectangleToRectangle(this.barrel.getBounds(), this.puzzleArea.getBounds())) {
+      this.river.clear(true)
+    }
+
     if (this.key_A.isDown) {
       moveLeft('SceneOne');
       this.player.anims.play('playerWalk', true);
@@ -133,6 +140,8 @@ class SceneOne extends Phaser.Scene {
     if (!this.key_W.isDown && !this.key_S.isDown) {
       this.player.setVelocityY(0)
     }
+
+    if (!this.key_A.isDown && !this.key_D.isDown && !this.key_W.isDown && !this.key_S.isDown) this.player.anims.stop()
   }
 }
 
