@@ -8,6 +8,7 @@ const gameConfig = {
   type: Phaser.AUTO,
   width: 1000,
   height: 600,
+  levelData: 'SceneOne',
   physics: {
     default: 'arcade',
     arcade: {
